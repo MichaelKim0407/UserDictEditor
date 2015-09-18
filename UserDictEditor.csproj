@@ -101,13 +101,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reference\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if $(ConfigurationName) == Debug copy "C:\Users\Michael\Documents\GitHub\GoogleInputUserDict\custom.dic" "$(TargetDir)"
 if $(ConfigurationName) == Debug copy "C:\Users\Michael\Documents\GitHub\GoogleInputUserDict\new.dic" "$(TargetDir)"
 if $(ConfigurationName) == Release copy "$(TargetPath)" "C:\Users\Michael\Documents\GitHub\GoogleInputUserDict\"
 if $(ConfigurationName) == Release copy "$(TargetDir)MKLibCS.dll" "C:\Users\Michael\Documents\GitHub\GoogleInputUserDict\"
-if $(ConfigurationName) == Release copy "$(TargetDir)MKLibCS.dll" "$(ProjectDir)"</PostBuildEvent>
+if $(ConfigurationName) == Release copy "$(TargetDir)MKLibCS.dll" "$(ProjectDir)Reference\"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
